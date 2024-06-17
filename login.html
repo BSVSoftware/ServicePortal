@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anmelden</title>
+    <link rel="stylesheet" href="login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="login-container">
+    <img src="images/successflow.png" alt="Logo" class="logo">
+    <h1>Anmelden</h1>
+    <form id="loginForm" class="login-form">
+        <div class="form-group">
+            <input type="text" id="username" placeholder="Benutzername" required>
+        </div>
+        <div class="form-group">
+            <input type="password" id="password" placeholder="Passwort" required>
+        </div>
+        <button type="submit" class="login-btn">Anmelden</button>
+        <div id="loginError" class="error-message"></div>
+    </form>
+    <div class="forgot-password-link">
+        <a href="forgot_password.html">Passwort vergessen?</a>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

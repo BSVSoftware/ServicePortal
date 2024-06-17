@@ -1,0 +1,73 @@
+/* menue.css */
+
+/* Importiere die Schriftart Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: url('images/Hintergrund.jpg') no-repeat center center fixed; /* Beispielbild */
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(249, 249, 249, 0.8); /* Helles Grau mit Transparenz */
+    border: 1px solid #4CAF50; /* Dezenter grüner Rand */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.menu-items-container {
+    background-color: rgba(51, 51, 51, 0.8); /* Dunkler Hintergrund mit Transparenz */
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 10px 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .menu-container {
+        padding: 10px;
+    }
+
+    .menu-items-container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+}

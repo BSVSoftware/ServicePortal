@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Ticket Portal</title>
+</head>
+<body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const token = localStorage.getItem("token");
+
+        // Überprüfen, ob ein Token gesetzt ist und zur Menüseite weiterleiten, wenn ja
+        if (token) {
+            window.location.href = "menue.html";
+        } else {
+            // Weiterleitung zur Login-Seite, wenn kein Token vorhanden ist
+            window.location.href = "login.html";
+        }
+    });
+</script>
+</body>
+</html>

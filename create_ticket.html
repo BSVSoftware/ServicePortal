@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Erstellen</title>
+    <link rel="stylesheet" href="create_ticket.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2023.1.117/styles/kendo.default-v2.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2023.1.117/js/kendo.all.min.js"></script>
+    <script src="./kendo-ui-license.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html5-qrcode/minified/html5-qrcode.min.js"></script>
+</head>
+<body>
+<div class="back-button">
+    <a href="Menue.html"><i class="fas fa-arrow-left"></i> Zurück zum Menü</a>
+</div>
+<div class="container">
+    <h1>Ticket Erstellen</h1>
+    <button id="startScanner" class="btn btn-primary">QR-Code scannen</button>
+    <div id="qr-reader" style="width: 100%; max-width: 600px; display: none; margin: auto;"></div>
+    <form id="createTicketForm">
+        <div class="form-group">
+            <label for="Kunde">Kunde:</label>
+            <input id="Kunde" class="form-control" aria-label="Kunde" data-role="combobox" />
+        </div>
+        <div class="form-group">
+            <label for="IDNR">Identnummer:</label>
+            <input id="IDNR" class="form-control" aria-label="Identnummer" />
+        </div>
+        <div class="form-group">
+            <label for="Produkt">Produkt:</label>
+            <input  type="text" id="Produkt" class="form-control" aria-label="Produkt" />
+        </div>
+        <div class="form-group">
+            <label for="Produktbereich">Produktbereich:</label>
+            <input id="Produktbereich" class="form-control" aria-label="Produktbereich" />
+        </div>
+        <div class="form-group">
+            <label for="Prioritaet">Priorität:</label>
+            <input id="Prioritaet" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="Stichwort">Stichwort:</label>
+            <input type="text" id="Stichwort" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="Problem">Problem:</label>
+            <textarea id="Problem" class="form-control" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="Kontakt">Kontakt:</label>
+            <input type="text" id="Kontakt" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="Email">E-Mail:</label>
+            <input type="email" id="Email" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="Telefon">Telefon:</label>
+            <input type="text" id="Telefon" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="Dateien">Dateien hochladen:</label>
+            <input type="file" id="Dateien" class="form-control" aria-label="Dateien hochladen" multiple>
+        </div>
+        <button type="submit" class="btn btn-primary">Ticket Erstellen</button>
+        <button type="button" id="cancelButton" class="btn btn-secondary"><i class="fas fa-times"></i> Abbruch</button>
+    </form>
+</div>
+<script src="create_ticket.js"></script>
+<script src="form_submit.js"></script>
+<script src="upload_files.js"></script>
+</body>
+</html>

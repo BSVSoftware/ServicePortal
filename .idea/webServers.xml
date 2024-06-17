@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="aa57c8f4-952f-446a-924b-38042290b9b2" name="successflow.bsv.net" url="http://successflow.bsv.net">
+        <fileTransfer rootFolder="/ServicePortal" host="successflow.bsv.net" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

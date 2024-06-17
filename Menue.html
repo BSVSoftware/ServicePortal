@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Ticket Portal</title>
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2023.1.117/styles/kendo.default-v2.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="menue.css">
+</head>
+<body>
+
+<div class="menu-container">
+    <img src="images/successflow.png" alt="Logo" style="display: block; margin: 0 auto; width: 120px; height: auto;"> <!-- Logo hier -->
+    <h1>Service Ticket Portal</h1>
+    <div class="menu-items-container">
+        <nav>
+            <ul id="menu">
+                <li class="auth-only"><a href="create_ticket.html"><i class="fas fa-ticket-alt"></i> Neues Ticket</a></li>
+                <li class="auth-only"><a href="Ticket_Uebersicht.html"><i class="fas fa-tasks"></i> Ticket &Uuml;bersicht</a></li>
+                <li class="auth-only"><a href="IDNR_Uebersicht.html"><i class="fas fa-list-alt"></i> Ger&auml;teliste</a></li>
+                <li class="auth-only"><a href="Order_Uebersicht.html"><i class="fas fa-truck"></i> Lieferungen &Uuml;bersicht</a></li>
+                <li class="auth-only"><a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Abmelden</a></li>
+                <li class="no-auth"><a href="login.html"><i class="fas fa-sign-in-alt"></i> Anmelden</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://kendo.cdn.telerik.com/2023.1.117/js/kendo.all.min.js"></script>
+<script src="script.js"></script> <!-- Verwendung des zentralisierten script.js für Menüsichtbarkeit und andere Funktionalitäten -->
+
+</body>
+</html>

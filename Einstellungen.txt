@@ -1,0 +1,8 @@
+{
+    "Prioritaet": [
+        {"text": "Standard", "value": 99},
+        {"text": "Wichtig", "value": 10},
+        {"text": "Sehr wichtig", "value": 1}
+    ],
+    "Ticketquelle": "Webportal"
+}

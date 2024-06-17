@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passwort zurücksetzen</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .email-container {
+            background-color: #ffffff;
+            padding: 20px;
+            margin: auto;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .email-header {
+            font-size: 24px;
+            color: #333333;
+            text-align: center;
+        }
+        .email-body {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #666666;
+        }
+        .email-key {
+            display: block;
+            font-size: 20px;
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #4A90E2;
+        }
+        .email-footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #999999;
+        }
+    </style>
+</head>
+<body>
+<div class="email-container">
+    <div class="email-header">
+        Passwort zurücksetzen
+    </div>
+    <div class="email-body">
+        Hallo,
+        <p>Wir haben eine Anfrage erhalten, Ihr Passwort zurückzusetzen. Bitte verwenden Sie den unten stehenden Sicherheitsschlüssel, um Ihr Passwort auf unserer Website zu aktualisieren:</p>
+        <span class="email-key"><!$MG_PW_Key></span>
+        <p>Dieser Schlüssel ist nur für kurze Zeit gültig.</p>
+        <p>Falls Sie diese Anfrage nicht gestellt haben, ignorieren Sie bitte diese E-Mail.</p>
+    </div>
+    <div class="email-footer">
+        Ihr Support Team
+    </div>
+</div>
+</body>
+</html>
