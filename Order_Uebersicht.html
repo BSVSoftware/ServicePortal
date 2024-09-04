@@ -1,49 +1,102 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lieferungen</title>
-    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2023.1.117/styles/kendo.default-v2.min.css">
-    <link rel="stylesheet" href="orderuebersicht.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://kendo.cdn.telerik.com/2023.1.117/styles/kendo.default-v2.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/ticketuebersicht_old.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://kendo.cdn.telerik.com/2023.1.117/styles/kendo.default-v2.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/2023.1.117/js/kendo.all.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/2023.1.117/js/cultures/kendo.culture.de-DE.min.js"></script>
-    <script src="orderScript.js"></script>
     <script src="./kendo-ui-license.js"></script>
-</head>
-<body>
-<div class="back-button">
-    <a href="Menue.html"><i class="fas fa-arrow-left"></i> Zurück zum Menü</a>
-</div>
-<div class="grid-container">
-    <h1>Lieferungen</h1>
-    <div class="top-bar">
-        <input type="text" id="searchBox" placeholder="Suchen..." class="k-textbox" style="margin-bottom: 10px; width: 300px;">
-        <i id="refreshButton" class="fas fa-sync-alt" title="Aktualisieren" style="cursor: pointer; margin-left: 10px;"></i>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/orderScript.js"></script>
+  </head>
+  <body>
+    <div class="divider"></div>
+    <div style="padding: 20px">
+      <div class="row" style="position: relative">
+        <div class="col-md-6">
+          <div class="back-button">
+            <a href="Menue.html"
+              ><i class="fas fa-arrow-left"></i>
+              <span style="margin-left: 5px">Zurück zum Menü</span></a
+            >
+          </div>
+        </div>
+        <div class="col-md-6">
+          <img
+            src="assets/images/logo.svg"
+            width="250"
+            alt="profile"
+            class="logo"
+          />
+        </div>
+      </div>
     </div>
-    <div id="orderGrid"></div>
-</div>
-<div id="overlay" style="display:none;">
-    <div id="loadingSpinner">
+    <div class="row" style="position: relative; margin: 40px 0px">
+      <div class="col-md-6">
+        <h1 class="heading">Lieferungen</h1>
+      </div>
+      <div class="col-md-6">
+        <input
+          type="text"
+          id="searchBox"
+          placeholder="Suchen..."
+          class="k-textbox"
+        />
+        <i
+          id="refreshButton"
+          class="fas fa-sync-alt"
+          title="Aktualisieren"
+          style="cursor: pointer; margin-left: 10px; padding-top: 10px"
+        ></i>
+      </div>
+    </div>
+    <div class="grid-container">
+      <div id="orderGrid"></div>
+    </div>
+    <div id="overlay" style="display: none">
+      <div id="loadingSpinner">
         <i class="fas fa-spinner fa-spin"></i>
+      </div>
     </div>
-</div>
-<script type="text/x-kendo-template" id="template">
-    <div class="details-container">
-        <h3>Details für Lieferung #: AuftragNr # - Position #: PositionNr #</h3>
-        <ul>
-            <li><strong>Datum:</strong> #= kendo.toString(Datum, 'dd.MM.yyyy') #</li>
-            <li><strong>Kunde:</strong> #= Kunde ? Kunde : '' #</li>
-            <li><strong>Id-Nr:</strong> #= Idnr ? Idnr : '' #</li>
-            <li><strong>Modell:</strong> #= Modell ? Modell : '' #</li>
-            <li><strong>Standort 1:</strong> #= Standort1 ? Standort1 : '' #</li>
-            <li><strong>Standort 2:</strong> #= Standort2 ? Standort2 : '' #</li>
-            <li><strong>Liefermenge:</strong> #= Liefermenge ? Liefermenge : '' #</li>
-            <li><strong>Paket Nr.:</strong> # if (PaketNr) { #<a href="https://www.dhl.de/de/privatkunden/dhl-sendungsverfolgung.html?piececode=#= PaketNr #" target="_blank" style="color: blue; text-decoration: underline;">#= PaketNr #</a># } else { # #= PaketNr # # } #</li>
-        </ul>
-    </div>
-</script>
-</body>
+    <script type="text/x-kendo-template" id="template">
+      <div class="details-container">
+          <h3>Details für Lieferung #: AuftragNr # - Position #: PositionNr #</h3>
+          <ul>
+              <li><strong>Datum:</strong> #= kendo.toString(Datum, 'dd.MM.yyyy') #</li>
+              <li><strong>Kunde:</strong> #= Kunde ? Kunde : '' #</li>
+              <li><strong>Id-Nr:</strong> #= Idnr ? Idnr : '' #</li>
+              <li><strong>Modell:</strong> #= Modell ? Modell : '' #</li>
+              <li><strong>Standort 1:</strong> #= Standort1 ? Standort1 : '' #</li>
+              <li><strong>Standort 2:</strong> #= Standort2 ? Standort2 : '' #</li>
+              <li><strong>Liefermenge:</strong> #= Liefermenge ? Liefermenge : '' #</li>
+              <li><strong>Paket Nr.:</strong> # if (PaketNr) { #<a href="https://www.dhl.de/de/privatkunden/dhl-sendungsverfolgung.html?piececode=#= PaketNr #" target="_blank" style="color: blue; text-decoration: underline;">#= PaketNr #</a># } else { # #= PaketNr # # } #</li>
+          </ul>
+      </div>
+    </script>
+  </body>
 </html>

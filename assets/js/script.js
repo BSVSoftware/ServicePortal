@@ -1,10 +1,24 @@
-const BASE_URL = 'https://otc.bsv.net/api/mgwebrequester.dll?appname=FlowRequester&PRGNAME=';
+let BASE_URL;
+//const BASE_URL = 'https://otc.bsv.net/api/mgwebrequester.dll?appname=FlowRequester&PRGNAME=';
 document.addEventListener('DOMContentLoaded', function() {
+    loadSettings();
     loadLicenseData();
     attachEventListeners();
     updateMenuVisibility();
     populateUsernameField();  // Load username from localStorage
 });
+
+function loadSettings() {
+    fetch('Einstellungen.txt')
+        .then(response => response.json())
+        .then(data => {
+            BASE_URL = data.BASE_URL;
+            console.log('BASE_URL loaded:', BASE_URL);
+            // After loading BASE_URL, you can perform other operations that depend on it
+        })
+        .catch(error => console.error('Error loading settings:', error));
+}
+
 
 function loadLicenseData() {
     fetch('license.txt')
@@ -21,7 +35,7 @@ function fetchWithHeaders(endpoint, options = {}) {
     const headers = new Headers({
         'UID': localStorage.getItem('UID'),
         'APPID': 'sfm',
-        'SECRET': 'QThc56q5',
+        'SECRET': '<Secret>',
         ...options.headers
     });
     return fetch(url, {...options, headers});

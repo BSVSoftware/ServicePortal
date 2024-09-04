@@ -4,5 +4,6 @@
         {"text": "Wichtig", "value": 10},
         {"text": "Sehr wichtig", "value": 1}
     ],
+    "BASE_URL": "https://otc.bsv.net/api/mgwebrequester.dll?appname=FlowRequester&PRGNAME=",
     "Ticketquelle": "Webportal"
 }

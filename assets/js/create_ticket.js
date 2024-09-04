@@ -1,9 +1,9 @@
 $(document).ready(function () {
+    let API_ENDPOINT_IDNR;
+    let API_ENDPOINT_PRODUKTBEREICHE;
     const dbName = "IDNRDatabase";
     const storeName = "idnrStore";
-    const API_ENDPOINT_IDNR = 'https://otc.bsv.net/api/mgwebrequester.dll?appname=FlowRequester&PRGNAME=requesterPortale&ARGUMENTS=-Agetpoidnr';
-    const API_ENDPOINT_SETTINGS = 'Einstellungen.txt'; // URL zu Einstellungen.txt im Root-Verzeichnis der Webanwendung
-    const API_ENDPOINT_PRODUKTBEREICHE = 'https://otc.bsv.net/api/mgwebrequester.dll?appname=FlowRequester&PRGNAME=requesterPortale&ARGUMENTS=-Agetproduktbereiche';
+    const API_ENDPOINT_SETTINGS = './Einstellungen.txt'; // URL zu Einstellungen.txt im Root-Verzeichnis der Webanwendung
     const currentSID = localStorage.getItem('SID');
     let db;
     let customersData = [];
@@ -14,13 +14,21 @@ $(document).ready(function () {
         return;
     }
 
-    initDB();
+    waitForBaseUrlAndInitialize();
 
-    // Einstellungen laden und ComboBox für Priorität initialisieren
-    loadSettings();
+    function waitForBaseUrlAndInitialize() {
+        if (typeof BASE_URL !== 'undefined' && BASE_URL) {
+            API_ENDPOINT_IDNR = BASE_URL + 'requesterPortale&ARGUMENTS=-Agetpoidnr';
+            API_ENDPOINT_PRODUKTBEREICHE = BASE_URL + 'requesterPortale&ARGUMENTS=-Agetproduktbereiche';
+            initDB();
+            loadSettings();
+            loadProduktbereiche();
+            // Other initialization code can go here
+        } else {
+            setTimeout(waitForBaseUrlAndInitialize, 100); // Check again after 100ms
+        }
+    }
 
-    // Produktbereiche laden und ComboBox initialisieren
-    loadProduktbereiche();
 
     function initDB() {
         let request = indexedDB.open(dbName, 1);

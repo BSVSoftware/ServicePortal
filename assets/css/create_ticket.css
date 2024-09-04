@@ -1,0 +1,103 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+body {
+    background: url('../images/background_ticket.jpeg') no-repeat right center/cover;
+    font-family: "Fira Sans", system-ui;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.divider {
+    width: 65%;
+    height: 100vh;
+    background-color: #9FC52A;
+    position: absolute;
+    clip-path: polygon(0 0, 40% 0, 100% 100%, 0 100%);
+    top: 0;
+    left: 0;
+}
+
+.container_main {
+    width: 55%;
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 80px;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 1; /* Ensure it stays above the divider */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.back-button {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    width: 164px;
+    height: 44px;
+    background-color: #fff;
+    color: #9FC52A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    z-index: 2;
+}
+
+.back-button a {
+    text-decoration: none;
+    color: #9FC52A;
+    font-size: 16px;
+}
+
+#startScanner {
+    width: 189px;
+    height: 44px;
+    background-color: #9FC52A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.5px solid #9FC52A;
+    color: #fff;
+    margin: 10px auto;
+}
+
+.btn_submit {
+    background-color: #9FC52A;
+    width: 180px;
+    height: 44px;
+    color: #fff;
+    border: none;
+}
+
+.btn_cancel {
+    background-color: #fff;
+    width: 180px;
+    height: 44px;
+    color: #9FC52A;
+    border: 0.5px solid #9FC52A;
+}
+
+.k-input:not(:-webkit-autofill) {
+    display: flex !important;
+}
+
+@media only screen and (max-width: 600px) {
+    .container_main {
+        width: 90%;
+    }
+
+    .btn_cancel {
+        margin-top: 20px;
+    }
+
+    .back-button {
+        left: 50%;
+        transform: translateX(-50%); /* Center the back button */
+    }
+}

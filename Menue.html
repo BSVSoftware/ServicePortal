@@ -1,35 +1,80 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Service Ticket Portal</title>
-    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2023.1.117/styles/kendo.default-v2.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="menue.css">
-</head>
-<body>
-
-<div class="menu-container">
-    <img src="images/successflow.png" alt="Logo" style="display: block; margin: 0 auto; width: 120px; height: auto;"> <!-- Logo hier -->
-    <h1>Service Ticket Portal</h1>
-    <div class="menu-items-container">
-        <nav>
-            <ul id="menu">
-                <li class="auth-only"><a href="create_ticket.html"><i class="fas fa-ticket-alt"></i> Neues Ticket</a></li>
-                <li class="auth-only"><a href="Ticket_Uebersicht.html"><i class="fas fa-tasks"></i> Ticket &Uuml;bersicht</a></li>
-                <li class="auth-only"><a href="IDNR_Uebersicht.html"><i class="fas fa-list-alt"></i> Ger&auml;teliste</a></li>
-                <li class="auth-only"><a href="Order_Uebersicht.html"><i class="fas fa-truck"></i> Lieferungen &Uuml;bersicht</a></li>
-                <li class="auth-only"><a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Abmelden</a></li>
-                <li class="no-auth"><a href="login.html"><i class="fas fa-sign-in-alt"></i> Anmelden</a></li>
-            </ul>
-        </nav>
+    <link
+      rel="stylesheet"
+      href="https://kendo.cdn.telerik.com/2023.1.117/styles/kendo.default-v2.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/menue.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="body">
+      <div class="divider"></div>
+      <div class="container_main">
+        <div class="card my-5">
+          <div class="card-body cardbody-color p-lg-5">
+            <div class="text-center">
+              <img src="assets/images/logo.svg" width="250" alt="profile" />
+              <h4 id="heading" class="text-gray mt-3">Service Ticket Portal</h4>
+            </div>
+            <div class="items-container">
+              <div class="row">
+                <div class="col-md-3 col-sm-6 col-6">
+                  <a class="item" href="create_ticket.html">
+                    <img src="assets/images/icon1.svg" />
+                    <p class="item-text">Neues Ticket</p>
+                  </a>
+                </div>
+                <div class="col-md-3 col-sm-6 col-6">
+                  <a class="item" href="Ticket_Uebersicht.html">
+                    <img src="assets/images/icon2.svg" />
+                    <p class="item-text">Ticketübersicht</p>
+                  </a>
+                </div>
+                <div class="col-md-3 col-sm-6 col-6">
+                  <a class="item" href="IDNR_Uebersicht.html">
+                    <img src="assets/images/icon3.svg" />
+                    <p class="item-text">Geräteliste</p>
+                  </a>
+                </div>
+                <div class="col-md-3 col-sm-6 col-6">
+                  <a class="item" href="Order_Uebersicht.html">
+                    <img src="assets/images/icon4.svg" />
+                    <p class="item-text">Lieferungen</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="logout-btn" href="login.html"
+        ><img src="assets/images/logout.svg" /> <span>Ausloggen</span></a
+      >
+      <p id="signature">www.IhrUnternehmen.de</p>
     </div>
-</div>
-
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://kendo.cdn.telerik.com/2023.1.117/js/kendo.all.min.js"></script>
-<script src="script.js"></script> <!-- Verwendung des zentralisierten script.js für Menüsichtbarkeit und andere Funktionalitäten -->
-
-</body>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2023.1.117/js/kendo.all.min.js"></script>
+    <script src="assets/js/script.js"></script> 
+    <!-- Verwendung des zentralisierten script.js für Menüsichtbarkeit und andere Funktionalitäten -->
+  </body>
 </html>

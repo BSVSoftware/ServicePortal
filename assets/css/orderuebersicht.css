@@ -1,0 +1,200 @@
+/* Grundlegende Reset- und Font-Einstellungen */
+body {
+    background: url('../images/background_main.jpeg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+    height: 100vh;
+    font-family: "Fira Sans", system-ui;
+}
+.divider {
+    width: 65%;
+    height: 100%;
+    background-color: #9FC52A;
+    position: absolute;
+    clip-path: polygon(0 0, 40% 0, 100% 100%, 0 100%);
+    top: 0px;
+}
+.back-button{
+    position: relative;
+    top: 10px;
+    left: 20px;
+    width: 164px;
+    height: 44px;
+    background-color: #ffff;
+    color: #9FC52A;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+.back-button a{
+    text-decoration: none;
+    color: #9FC52A;
+    font-size: 16px;
+}
+
+/* Allgemeines Container- und Grid-Styling für eine flexible Anordnung */
+.grid-container {
+    padding: 10px; /* Reduziertes Padding für den Grid-Container */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Reduzierter Abstand zwischen Elementen */
+}
+.heading{
+    text-align: left;
+    margin-left: 20px;
+    color: #fff;
+}
+#searchBox {
+    padding: 8px;
+    position: relative;
+    right: 50px;
+    width: 345px;
+}
+
+/* Spinner und Refresh Button Styling */
+.top-bar {
+    align-items: center;
+}
+
+#refreshButton {
+    margin-left: 10px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    font-size: 28px;
+}
+
+.logo{
+    float: right;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+#loadingSpinner {
+    margin-left: 10px;
+}
+
+.details-container h3 font{
+    color: #9FC52A;
+}
+/* Responsive Design-Anpassungen */
+@media screen and (max-width: 768px) {
+    .grid-container {
+        flex-direction: column;
+        align-items: center;
+        display: block;
+        padding: 5px; /* Weiter reduziertes Padding auf kleinen Bildschirmen */
+    }
+    .heading{
+        margin-left: 10px;
+    }
+    .divider {
+        width: 100%;
+        height: 100%;
+        background-color: #9FC52A;
+        position: absolute;
+        clip-path: polygon(0 0, 50% 0, 100% 100%, 0 100%);
+        top: 0px;
+    }
+    .logo{
+        width: 200px;
+        margin-right: 0px;
+    }
+    .back-button{
+        position: absolute;
+        top: 10px;
+        left: 15px;
+    }
+}
+
+/* Header und Navigationselemente */
+h1 {
+    color: #00695c; /* Dunklerer Grünton */
+    text-align: center;
+    width: 100%;
+    margin-top: 0; /* Kein oberer Abstand für den Header */
+    padding: 5px 0; /* Reduziertes Padding oben und unten */
+}
+
+/* Anpassung von Eingabefeldern */
+input[type="text"] {
+    width: 100%;
+    padding: 8px 10px; /* Leicht reduziertes Padding seitlich */
+    margin-bottom: 5px; /* Reduzierter unterer Abstand */
+    border: 1px solid #9FC52A;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    float: right;
+}
+
+@media screen and (min-width: 768px) {
+    input[type="text"] {
+        width: auto;
+    }
+}
+
+/* Verbesserung der Darstellung von Listen und Daten in der Grid-Ansicht */
+#grid {
+    width: 100%;
+    max-width: none; /* Entfernt die maximale Breiteneinstellung */
+    margin: 0 auto; /* Zentriert das Grid ohne zusätzlichen Außenabstand */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow-x: auto; /* Erlaubt horizontales Scrollen, wenn nötig */
+    overflow-y: auto;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#loadingSpinner {
+    color: white;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Neue Styles für die Details Container */
+.details-container {
+    display: block;
+    margin-bottom: 20px;
+    color: #333; /* Sicherstellen, dass die Farbe nicht rot ist */
+}
+
+.details-container h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.details-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.details-container ul li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+    display: block; /* Sicherstellen, dass jedes Listenelement als Block angezeigt wird */
+}
+
+.details-container ul li strong {
+    color: #333; /* Setzen Sie die Farbe des Textes auf Schwarz */
+}
+
+.details-container ul li a.btn {
+    display: inline-block;
+    margin-top: 5px;
+}
